@@ -37,6 +37,29 @@
         #}</a>
         </li>
       {% endif %}
+
+      <li class="menu-item menu-item-lang">
+            <a href="javascript:;"><i class="menu-item-icon fa fa-fw fa-globe"></i>
+            <br />
+            <span>{{ site.data.languages[page.lang] }}</span></a>
+
+            <select id="lang-select" onchange="changeLang()">
+               {% for lang in site.data.languages.list %}
+                        <option value="{{ lang }}"
+                        {% if page.lang === lang %}
+                             selected = "selected"
+                        {% endif %}
+                        >{{ site.data.languages[lang] }}</option>
+               {% endfor %}
+            </select>
+      </li>
+
+      <script>
+               function changeLang() {
+                    var lang = document.getElementById("lang-select").value;
+                    window.location = "/" + lang + "/";
+               }
+      </script>
     </ul>
   {% endif %}
 

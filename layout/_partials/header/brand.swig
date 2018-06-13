@@ -9,13 +9,16 @@
       </div>
     {% endif %}
 
-    <div class="custom-logo-site-title">
-      <a href="{{ config.root }}" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">{{ title }}</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
+    {% if theme.scheme !== 'Muse' %}
+          <div class="custom-logo-site-title">
+                <a href="{{ config.root }}" class="brand" rel="start">
+                  <span class="logo-line-before"><i></i></span>
+                  <span class="site-title">{{ title }}</span>
+                  <span class="logo-line-after"><i></i></span>
+                </a>
+          </div>
+    {% endif %}
+
     {% if subtitle %}
       {% if theme.seo %}
         <h1 class="site-subtitle" itemprop="description">{{ subtitle }}</h1>
