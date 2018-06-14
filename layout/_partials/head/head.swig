@@ -122,7 +122,7 @@
     tabs: {{ theme.tabs.enable }},
     motion: {{ theme.motion | json_encode }},
     algolia: {
-      applicationID: '{{ theme.algolia.applicationID }}',
+      appId: '{{ theme.algolia.appId }}',
       apiKey: '{{ theme.algolia.apiKey }}',
       indexName: '{{ theme.algolia.indexName }}',
       hits: {{ theme.algolia_search.hits | json_encode }},
