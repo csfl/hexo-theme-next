@@ -367,6 +367,12 @@
     {### END POST BODY ###}
     {#####################}
 
+    {% if theme.post_footer and not is_index %}
+      <div>
+        {% include 'post-footer.swig' %}
+      </div>
+    {% endif %}
+
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
         {% include 'wechat-subscriber.swig' %}
